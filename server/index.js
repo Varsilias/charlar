@@ -10,6 +10,10 @@ const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 const WEB_URI = process.env.WEB_URI;
 
+app.get("/", (req, res) => {
+  res.send("Health Check");
+});
+
 app.use(express.json());
 app.use(cors());
 app.use("/api", routes);
